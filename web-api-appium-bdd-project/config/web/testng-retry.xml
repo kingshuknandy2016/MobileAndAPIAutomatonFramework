@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="JAVA TEST SUITE" parallel="true" thread-count="1">
+	<groups>
+		<run>
+			<include name="FUNCTIONAL"></include>
+		</run>
+	</groups>
+	<listeners>
+		<listener class-name="com.api.listners.AnnotationTransformer"></listener>
+	</listeners>
+	<test name="Retry Multiple">
+		<classes>
+			<!-- <class name="com.executor.TestFactory"></class> -->
+			<class name="com.api.listners.DemoSuite2"></class>
+		</classes>
+	</test>
+</suite>
