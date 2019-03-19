@@ -1,1 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="JAVA TEST SUITE" parallel="true" thread-count="1">
+	<test name="TestFactory Attribute">
+		<classes>
+			<class name="com.api.backend.executor.TestFactory"></class>
+			<class name="com.api.tests.Suite1"></class>
+		</classes>
+	</test>
+</suite>
