@@ -1,5 +1,13 @@
 package com.api.backend.executor;
 
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.CucumberFeatureWrapper;
+import cucumber.api.testng.TestNGCucumberRunner;
+
 @CucumberOptions(features = "Scenarios/api", 
 					glue = {"com.api.steps"}, 
 					format = { "pretty", "html:target/cucumber-reports/cucumber-pretty",

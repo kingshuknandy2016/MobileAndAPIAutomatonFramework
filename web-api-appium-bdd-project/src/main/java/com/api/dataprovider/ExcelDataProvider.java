@@ -1,5 +1,10 @@
 package com.api.dataprovider;
 
+import org.testng.annotations.DataProvider;
+
+import com.api.utils.ConfigurationManager;
+import com.common.backend.utils.ExcelUtils;
+
 public class ExcelDataProvider {
 	@DataProvider(name = "dataProviderExcel")
 	public Object[][] getDataFromExcel() {

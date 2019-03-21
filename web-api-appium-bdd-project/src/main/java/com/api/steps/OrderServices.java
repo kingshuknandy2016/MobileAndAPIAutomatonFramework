@@ -1,6 +1,9 @@
 package com.api.steps;
 
-public class OrderServices {
+import com.backend.api.WebServiceTestBase;
+import com.sun.jersey.api.client.ClientResponse;
+
+public class OrderServices extends WebServiceTestBase{
 public static void getOrders() {
 		getWebResource("/orders.json").get(ClientResponse.class);
 	}

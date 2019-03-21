@@ -1,7 +1,15 @@
 package com.common.backend.utils;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+import org.apache.commons.configuration.XMLConfiguration;
+
 public class PropertyUtil extends XMLConfiguration {
-public String propertyFileName;
+	public String propertyFileName;
 	public Properties properties = new Properties();;
 
 	public PropertyUtil(String propetyFileName) {
@@ -35,8 +43,8 @@ public String propertyFileName;
 			}
 		}
 	}
-  
-  public String[] getStringArray(String key, String... defaultValue) {
+
+	public String[] getStringArray(String key, String... defaultValue) {
 		String[] retVal = super.getStringArray(key);
 		return (retVal != null) && (retVal.length > 0) ? retVal : defaultValue == null ? new String[] {} : defaultValue;
 	}

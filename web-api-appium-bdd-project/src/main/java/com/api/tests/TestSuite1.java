@@ -1,5 +1,5 @@
 package com.api.tests;
 
-public class Suite1 {
+public class TestSuite1 {
 
 }

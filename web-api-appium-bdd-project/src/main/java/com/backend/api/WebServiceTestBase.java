@@ -1,4 +1,8 @@
-package com.api.backend.base;
+package com.backend.api;
+
+import com.api.utils.ConfigurationManager;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.WebResource;
 
 public class WebServiceTestBase {
 private static Response response;
@@ -20,4 +24,5 @@ private static Response response;
 	public static WebResource getWebResource(String resource) {
 		return  getClient().resource(ConfigurationManager.getBundle().getProperty("env.url")).path(resource);
 	}
+	
 }

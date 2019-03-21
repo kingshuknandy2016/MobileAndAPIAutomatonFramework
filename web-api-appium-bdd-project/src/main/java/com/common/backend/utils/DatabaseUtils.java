@@ -1,7 +1,18 @@
 package com.common.backend.utils;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.api.utils.ConfigurationManager;
+
 public class DatabaseUtils {
-public static void close(PreparedStatement ps) {
+	public static void close(PreparedStatement ps) {
 		try {
 			if (ps != null) {
 				ps.clearWarnings();
@@ -9,21 +20,21 @@ public static void close(PreparedStatement ps) {
 				ps.close();
 			}
 		} catch (SQLException sqlexception) {
-			
+
 		}
 	}
 
 	public static void close(Statement statement) {
 		try {
-			if (statement!= null) {
+			if (statement != null) {
 				statement.close();
 			}
 		} catch (SQLException sqle) {
-			
+
 		}
 	}
-  
-  public static void close(PreparedStatement ps, ResultSet rs) {
+
+	public static void close(PreparedStatement ps, ResultSet rs) {
 		close(rs);
 		close(ps);
 	}
@@ -42,34 +53,35 @@ public static void close(PreparedStatement ps) {
 
 		}
 	}
-  
-  public static void close(Connection conn) {
+
+	public static void close(Connection conn) {
 		try {
 			if (conn != null) {
 				conn.close();
 			}
 		} catch (SQLException se) {
-		
+
 		}
 	}
 
 	public static Connection getConnection() throws Exception {
-		PropertyUtil props = new PropertyUtil(System.getProperty("user.dir")+"\\resources\\"+ConfigurationManager.getBundle().getProperty("db.properties"));
+		PropertyUtil props = new PropertyUtil(System.getProperty("user.dir") + "\\resources\\"
+				+ ConfigurationManager.getBundle().getProperty("db.properties"));
 		String url = props.getString("db.connection.url");
 		String driverclass = props.getString("db.driver.class");
 		String user = props.getString("db.user");
 		String pwd = props.getString("db.pwd");
 		return getConnection(driverclass, url, user, pwd);
 	}
-  
-  public static Connection getConnection(String driverCls, String url, String user, String pwd) throws Exception {
+
+	public static Connection getConnection(String driverCls, String url, String user, String pwd) throws Exception {
 		Connection con = null;
 		Class.forName(driverCls);
 		con = DriverManager.getConnection(url, user, pwd);
 		return con;
 	}
-  
-  public static Object[][] getData(String query) {
+
+	public static Object[][] getData(String query) {
 		ArrayList<Object[]> rows = new ArrayList();
 		Connection con = null;
 		Statement stmt = null;
@@ -86,7 +98,7 @@ public static void close(PreparedStatement ps) {
 				}
 				rows.add(cols);
 			}
-} catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			close(stmt, rs);
@@ -94,8 +106,8 @@ public static void close(PreparedStatement ps) {
 		}
 		return (Object[][]) rows.toArray(new Object[0][]);
 	}
-  
-  public static HashMap<String, String> getDBSingleRowValue(String query) {
+
+	public static HashMap<String, String> getDBSingleRowValue(String query) {
 		HashMap<String, String> mapOtput = new HashMap<String, String>();
 		Connection con = null;
 		Statement stmt = null;
@@ -113,8 +125,8 @@ public static void close(PreparedStatement ps) {
 							.println(rs.getMetaData().getColumnLabel(indx) + ":" + String.valueOf(rs.getObject(indx)));
 				}
 			}
-      
-      } catch (Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DatabaseUtils.close(stmt, rs);
@@ -125,8 +137,9 @@ public static void close(PreparedStatement ps) {
 
 	public static HashMap<String, String> getDataFromDB(String tableName, String WhereClauseParameterName,
 			String parameterValue) {
-		HashMap<String, String> map = DatabaseUtils.getDBSingleRowValue(
-				"Select * from " + tableName + " WHERE " + WhereClauseParameterName + "='" + parameterValue + "'");
+		HashMap<String, String> map = DatabaseUtils.getDBSingleRowValue("Select * from " + tableName + " WHERE "
+				+ WhereClauseParameterName + "='" + parameterValue + "'");
 		return map;
 	}
+
 }

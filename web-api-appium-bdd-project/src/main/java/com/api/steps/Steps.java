@@ -1,7 +1,10 @@
 package com.api.steps;
 
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+
 public class Steps {
-@Given("^Get order details$")
+	@Given("^Get order details$")
 	public static void get_Orders() {
 		OrderServices.getOrders();
 	}
