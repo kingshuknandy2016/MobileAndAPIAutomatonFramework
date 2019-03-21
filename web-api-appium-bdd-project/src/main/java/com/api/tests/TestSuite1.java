@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import com.api.listners.RetryAnalyzer;
 
 public class TestSuite1 {
-	@Test/*(retryAnalyzer=RetryAnalyzer.class)*/
+	@Test(retryAnalyzer=RetryAnalyzer.class)
 	public void Test1(){
 		Assert.assertEquals(false, true);
 	}
