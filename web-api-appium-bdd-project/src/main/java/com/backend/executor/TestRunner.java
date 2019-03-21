@@ -1,4 +1,4 @@
-package com.api.backend.executor;
+package com.backend.executor;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.DataProvider;

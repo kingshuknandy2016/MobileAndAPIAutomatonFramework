@@ -1,8 +1,8 @@
-package com.api.dataprovider;
+package com.backend.dataprovider;
 
 import org.testng.annotations.DataProvider;
 
-import com.common.backend.utils.DatabaseUtils;
+import com.backend.utils.DatabaseUtils;
 
 public class DatabaseDataProvider {
 	@DataProvider(name="dataProviderDB")

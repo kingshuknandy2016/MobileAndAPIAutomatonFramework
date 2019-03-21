@@ -1,6 +1,6 @@
 package com.backend.api;
 
-import com.api.utils.ConfigurationManager;
+import com.backend.utils.ConfigurationManager;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 

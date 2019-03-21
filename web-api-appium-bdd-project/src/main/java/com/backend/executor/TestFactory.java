@@ -1,8 +1,9 @@
-package com.api.backend.executor;
+package com.backend.executor;
 
 import org.testng.annotations.Factory;
-import com.api.dataprovider.DatabaseDataProvider;
-import com.api.dataprovider.ExcelDataProvider;
+
+import com.backend.dataprovider.DatabaseDataProvider;
+import com.backend.dataprovider.ExcelDataProvider;
 
 public class TestFactory {
 @Factory

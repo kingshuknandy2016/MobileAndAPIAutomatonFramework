@@ -1,6 +1,5 @@
-package com.api.utils;
+package com.backend.utils;
 
-import com.common.backend.utils.PropertyUtil;
 
 public class ConfigurationManager {
 private static final ConfigurationManager INSTANCE = new ConfigurationManager();

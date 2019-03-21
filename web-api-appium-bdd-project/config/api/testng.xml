@@ -2,7 +2,7 @@
 <suite name="API Regression Suite" parallel="true" thread-count="1">
 	<test name="Only API">
 		<classes>
-			<class name="com.api.backend.executor.TestRunner"></class>
+			<class name="com.backend.executor.TestRunner"></class>
 		</classes>
 	</test>
 </suite>

@@ -1,4 +1,4 @@
-package com.common.backend.utils;
+package com.backend.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,8 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import com.api.utils.ConfigurationManager;
 
 public class DatabaseUtils {
 	public static void close(PreparedStatement ps) {

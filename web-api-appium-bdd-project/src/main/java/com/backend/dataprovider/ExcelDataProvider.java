@@ -1,9 +1,9 @@
-package com.api.dataprovider;
+package com.backend.dataprovider;
 
 import org.testng.annotations.DataProvider;
 
-import com.api.utils.ConfigurationManager;
-import com.common.backend.utils.ExcelUtils;
+import com.backend.utils.ConfigurationManager;
+import com.backend.utils.ExcelUtils;
 
 public class ExcelDataProvider {
 	@DataProvider(name = "dataProviderExcel")
