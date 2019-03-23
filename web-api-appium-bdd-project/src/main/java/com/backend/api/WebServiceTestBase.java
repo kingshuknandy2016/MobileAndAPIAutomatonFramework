@@ -22,7 +22,7 @@ private static Response response;
 	}
 	
 	public static WebResource getWebResource(String resource) {
-		return  getClient().resource(ConfigurationManager.getBundle().getProperty("env.url")).path(resource);
+		return  getClient().resource(ConfigurationManager.getBundle().getProperty("env.url").toString()).path(resource);
 	}
 	
 }

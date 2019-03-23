@@ -1,6 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="API Regression Suite" parallel="true" thread-count="1">
 	<test name="Only API">
+	<parameter name="features" value=""></parameter>
+	<parameter name="glue" value="{'com.api.steps'}"></parameter>
 		<classes>
 			<class name="com.backend.executor.TestRunner"></class>
 		</classes>

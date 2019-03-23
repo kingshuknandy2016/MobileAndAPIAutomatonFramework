@@ -11,6 +11,6 @@ public class ConfigurationManager {
 
 	public static void main(String[] args) {
 		ConfigurationManager.getBundle().getProperty("env.url");
-		System.out.println(ConfigurationManager.getBundle().getProperty("env.url"));
+		System.out.println(ConfigurationManager.getBundle().getProperty("db.properties"));
 	}
 }
