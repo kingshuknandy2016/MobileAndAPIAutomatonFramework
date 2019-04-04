@@ -30,7 +30,7 @@ public String filePath;
 			} else if (cell.getCellType().toString().contains("NUMERIC")) {
 				outPut = cell.getNumericCellValue();
 			}
-			System.out.println(outPut);
+			//System.out.println(outPut);
     	} catch (Exception e) {
 			System.out.println("Exception Occured. Error:"+e.getMessage());
 		}
@@ -44,7 +44,7 @@ public String filePath;
 			HSSFWorkbook workbook=new HSSFWorkbook(fis);
 			HSSFSheet sheet=workbook.getSheet(sheetName);
 			number=sheet.getPhysicalNumberOfRows();
-			System.out.println("RowCount:"+number);
+			//System.out.println("RowCount:"+number);
     	} catch (Exception e) {
 			System.out.println("Exception Occured. Error:"+e.getMessage());
 		}

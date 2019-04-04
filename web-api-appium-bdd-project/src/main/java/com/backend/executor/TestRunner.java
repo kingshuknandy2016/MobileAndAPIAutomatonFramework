@@ -12,20 +12,16 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
-
-@Parameters({"features","glue"})
 @CucumberOptions(features = "Scenarios/Mobile/android", 
-			glue = {"com.android.steps"}, 
-					format = { "pretty", "html:target/cucumber-reports/cucumber-pretty",
-								"json:target/cucumber-reports/CucumberTestReport.json", 
-									"rerun:target/cucumber-reports/re-run.txt" })
-
+glue = {"com.android.steps"}, 
+		format = { "pretty", "html:target/cucumber-reports/cucumber-pretty",
+					"json:target/cucumber-reports/CucumberTestReport.json", 
+						"rerun:target/cucumber-reports/re-run.txt" })
 public class TestRunner {
 private TestNGCucumberRunner testRunner = new TestNGCucumberRunner(TestRunner.class);
 	
 	@BeforeSuite
 	public void init(){
-		//MIN_VALUE="";
 		ConfigurationManager.getBundle();
 		//final String feature1=ConfigurationManager.getBundle().getProperty("").toString();
 		

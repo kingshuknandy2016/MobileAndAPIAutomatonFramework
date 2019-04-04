@@ -1,7 +1,6 @@
 package com.backend.executor;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 
 import com.backend.utils.ConfigurationManager;
 
