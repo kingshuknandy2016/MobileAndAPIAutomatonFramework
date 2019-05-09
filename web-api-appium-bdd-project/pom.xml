@@ -13,7 +13,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<testSuiteFile>config/api/testng.xml</testSuiteFile>
+		<testSuiteFile>config/web/testng.xml</testSuiteFile>
 	</properties>
 
 	<dependencies>

@@ -7,7 +7,7 @@ import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
 import com.backend.executor.WebDriverManager;
-import com.backend.reports.ExtentTestManager;
+import com.backend.reports.Reporter;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class RetryAnalyzer implements IRetryAnalyzer {
@@ -28,8 +28,8 @@ public class RetryAnalyzer implements IRetryAnalyzer {
 	        Object testClass = iTestResult.getInstance();
 	        WebDriver webDriver = ((WebDriverManager) testClass).getDriver();
 	        String base64Screenshot = "data:image/png;base64,"+((TakesScreenshot)webDriver).getScreenshotAs(OutputType.BASE64);
-	        ExtentTestManager.getTest().log(LogStatus.FAIL,"Test Failed",
-	                ExtentTestManager.getTest().addBase64ScreenShot(base64Screenshot));
+	        Reporter.getTest().log(LogStatus.FAIL,"Test Failed",
+	                Reporter.getTest().addBase64ScreenShot(base64Screenshot));
 	    }
 
 }

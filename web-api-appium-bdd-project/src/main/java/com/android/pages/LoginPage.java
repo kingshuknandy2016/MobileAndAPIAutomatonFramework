@@ -1,21 +1,31 @@
 package com.android.pages;
 
+import java.net.MalformedURLException;
+
 import org.openqa.selenium.support.PageFactory;
 
 import com.backend.executor.WebDriverManager;
-import com.backend.reports.ExtentTestManager;
 
+
+
+
+import io.appium.java_client.DeviceActionShortcuts;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 
-public class LoginPage {
+public class LoginPage extends WebDriverManager {
 
-	public LoginPage(AndroidDriver<AndroidElement> driver) {
-		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+	public LoginPage() throws MalformedURLException {
+		super();
+		PageFactory.initElements(new AppiumFieldDecorator(getDriver()), this);
 	}
+
+	/*public LoginPage(AndroidDriver<AndroidElement> driver) {
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+	}*/
 //
 //	@FindBy(how = How.CLASS_NAME, using = "android.widget.TextView")
 //	private CusWebElement header;
@@ -67,8 +77,8 @@ public class LoginPage {
 	
 	public void clickLogin() {
 		try {
-			AndroidDriver driver=(AndroidDriver) WebDriverManager.getDriver();
-			driver.hideKeyboard();
+			//AndroidDriver driver=(AndroidDriver) WebDriverManager.getDriver();
+			((DeviceActionShortcuts) getDriver()).hideKeyboard();
 			getLoginBtn().click();
 		} catch (Exception e2) {
 			System.out.println("Exception Occured. Exception:"+e2.getLocalizedMessage());

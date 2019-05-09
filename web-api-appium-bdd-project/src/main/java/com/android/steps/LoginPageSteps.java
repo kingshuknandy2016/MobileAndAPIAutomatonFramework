@@ -25,7 +25,7 @@ public class LoginPageSteps {
 	
 	@When("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
 	public static void user_enters_and(String arg1, String arg2) throws Throwable {
-	   loginPage=new LoginPage((AndroidDriver) driver);
+	   loginPage=new LoginPage();
 	   loginPage.enterUserNamePass(arg1, arg2);
 	}
 	
@@ -35,7 +35,7 @@ public class LoginPageSteps {
 	}
 	
 	public static void userEntersUserNamePassword(String username, String password) throws Throwable {
-		   loginPage=new LoginPage((AndroidDriver) driver);
+		   loginPage=new LoginPage();
 		   loginPage.enterUserNamePass(username, password);
 		   loginPage.clickLogin();
 		   loginPage.validateSuccessfullLogin();
